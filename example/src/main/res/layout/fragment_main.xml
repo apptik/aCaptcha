@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dip"
+    >
+
+    <EditText android:id="@+id/txt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:layout_marginBottom="10dip"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email"
+        />
+    <EditText android:id="@+id/txt_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:layout_marginBottom="20dip"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        />
+    <FrameLayout
+        android:id="@+id/captcha_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:text="@string/login"
+        android:textColor="#fff"
+        />
+
+
+</LinearLayout>
+
+

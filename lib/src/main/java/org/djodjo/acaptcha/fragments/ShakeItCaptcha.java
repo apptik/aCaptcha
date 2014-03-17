@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha;
+package org.djodjo.acaptcha.fragments;
 
 import android.app.Activity;
 import android.hardware.Sensor;
@@ -24,6 +24,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.djodjo.acaptcha.CaptchaFragment;
 import org.djodjo.acaptcha.R;
 import org.djodjo.acaptcha.tools.ShakeEventListener;
 

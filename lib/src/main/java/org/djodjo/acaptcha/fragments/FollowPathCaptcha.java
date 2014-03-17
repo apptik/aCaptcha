@@ -14,17 +14,18 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha;
+package org.djodjo.acaptcha.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.djodjo.acaptcha.CaptchaFragment;
 import org.djodjo.acaptcha.R;
 
 
-public class PointItCaptcha extends CaptchaFragment {
+public class FollowPathCaptcha extends CaptchaFragment {
 
     @Override
     protected View generateCaptchaView(LayoutInflater inflater, ViewGroup container,

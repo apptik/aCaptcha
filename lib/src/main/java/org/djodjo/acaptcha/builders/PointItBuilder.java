@@ -17,9 +17,7 @@
 package org.djodjo.acaptcha.builders;
 
 
-import org.djodjo.acaptcha.CaptchaFragment;
-import org.djodjo.acaptcha.PointItCaptcha;
-import org.djodjo.acaptcha.SlideItCaptcha;
+import org.djodjo.acaptcha.fragments.PointItCaptcha;
 
 public class PointItBuilder extends CaptchaFragmentBuilder {
 

@@ -20,7 +20,6 @@ package org.djodjo.acaptcha.builders;
 import android.os.Bundle;
 
 import org.djodjo.acaptcha.CaptchaFragment;
-import org.djodjo.acaptcha.ShakeItCaptcha;
 
 public abstract class CaptchaFragmentBuilder {
 

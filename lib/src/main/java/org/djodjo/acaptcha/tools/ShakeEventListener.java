@@ -21,7 +21,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.util.FloatMath;
+
 
 public class ShakeEventListener implements SensorEventListener {
 
@@ -51,38 +51,42 @@ public class ShakeEventListener implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
 
-        if (mListener != null) {
-            float x = event.values[0];
-            float y = event.values[1];
-            float z = event.values[2];
+       try {
+           if (mListener != null) {
+               float x = event.values[0];
+               float y = event.values[1];
+               float z = event.values[2];
 
-            float gX = x / SensorManager.GRAVITY_EARTH;
-            float gY = y / SensorManager.GRAVITY_EARTH;
-            float gZ = z / SensorManager.GRAVITY_EARTH;
+               float gX = x / SensorManager.GRAVITY_EARTH;
+               float gY = y / SensorManager.GRAVITY_EARTH;
+               float gZ = z / SensorManager.GRAVITY_EARTH;
 
-            // gForce will be close to 1 when there is no movement.
-            float gForce = FloatMath.sqrt(gX * gX + gY * gY + gZ * gZ);
+               // gForce will be close to 1 when there is no movement.
+               double gForce = Math.sqrt(gX * gX + gY * gY + gZ * gZ);
 
-            if (gForce > SHAKE_THRESHOLD_GRAVITY) {
-                final long now = System.currentTimeMillis();
-                // ignore shake events too close to each other (500ms)
+               if (gForce > SHAKE_THRESHOLD_GRAVITY) {
+                   final long now = System.currentTimeMillis();
+                   // ignore shake events too close to each other (500ms)
 
 
-                // reset the shake count after 3 seconds of no shakes
-                if (mShakeTimestamp + SHAKE_COUNT_RESET_TIME_MS < now ) {
-                    majorCount = 0;
-                    mListener.onCounterReset();
-                }
+                   // reset the shake count after 3 seconds of no shakes
+                   if (mShakeTimestamp + SHAKE_COUNT_RESET_TIME_MS < now) {
+                       majorCount = 0;
+                       mListener.onCounterReset();
+                   }
 
-                if (mShakeTimestamp + SHAKE_SLOP_TIME_MS <= now ) {
-                    majorCount++;
-                }
+                   if (mShakeTimestamp + SHAKE_SLOP_TIME_MS <= now) {
+                       majorCount++;
+                   }
 
-                mShakeTimestamp = now;
-                minorCount++;
+                   mShakeTimestamp = now;
+                   minorCount++;
 
-                mListener.onShake(minorCount, majorCount);
-            }
-        }
+                   mListener.onShake(minorCount, majorCount);
+               }
+           }
+       } catch (Exception ex) {
+
+       }
     }
 }

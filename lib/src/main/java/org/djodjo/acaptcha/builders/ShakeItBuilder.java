@@ -18,7 +18,7 @@ package org.djodjo.acaptcha.builders;
 
 
 import org.djodjo.acaptcha.CaptchaFragment;
-import org.djodjo.acaptcha.ShakeItCaptcha;
+import org.djodjo.acaptcha.fragments.ShakeItCaptcha;
 
 public class ShakeItBuilder extends CaptchaFragmentBuilder {
 

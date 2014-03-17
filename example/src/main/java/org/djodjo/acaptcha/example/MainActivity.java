@@ -31,8 +31,6 @@ import android.widget.Toast;
 
 import org.djodjo.acaptcha.CaptchaFragment;
 import org.djodjo.acaptcha.CaptchaFragmentManager;
-import org.djodjo.acaptcha.PointItCaptcha;
-import org.djodjo.acaptcha.SlideItCaptcha;
 import org.djodjo.acaptcha.builders.PointItBuilder;
 import org.djodjo.acaptcha.builders.ShakeItBuilder;
 import org.djodjo.acaptcha.builders.SlideItBuilder;

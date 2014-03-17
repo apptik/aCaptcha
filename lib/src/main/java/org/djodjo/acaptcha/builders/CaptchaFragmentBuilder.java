@@ -41,6 +41,11 @@ public abstract class CaptchaFragmentBuilder {
         return this;
     }
 
+    public CaptchaFragmentBuilder withCustomLayout(int customLayout) {
+        args.putInt(CaptchaFragment.ARG_CUSTOM_LAYOUT, customLayout);
+        return this;
+    }
+
     public CaptchaFragmentBuilder removeCaptchaFragmentOnSuccess(boolean goneOnSuccess) {
         args.putBoolean(CaptchaFragment.ARG_GONE_ON_SUCCESS, goneOnSuccess);
         return this;

@@ -39,6 +39,7 @@ public abstract class CaptchaFragment extends Fragment {
     public static final String ARG_VIEW_ID = "view_id";
     public static final String ARG_VIEW_BLOCKING_METHOD = "view_blocking_method";
     public static final String ARG_CUSTOM_TEXT = "custom_text";
+    public static final String ARG_CUSTOM_LAYOUT = "custom_layout";
     public static final String ARG_GONE_ON_SUCCESS = "gone_on_success";
 
 
@@ -46,7 +47,9 @@ public abstract class CaptchaFragment extends Fragment {
     private View controlledView = null;
     private int blockingMethod = 1;
     private String customText = null;
+    private int customLayout = 0;
     private boolean goneOnSuccess = false;
+
 
 
     private View.OnClickListener origOnClickListener;
@@ -116,6 +119,7 @@ public abstract class CaptchaFragment extends Fragment {
             controlledView = getActivity().findViewById(getArguments().getInt(ARG_VIEW_ID));
             blockingMethod = getArguments().getInt(ARG_VIEW_BLOCKING_METHOD, BLOCKING_METHOD_VISIBLE);
             customText = getArguments().getString(ARG_CUSTOM_TEXT, null);
+            customLayout = getArguments().getInt(ARG_CUSTOM_LAYOUT, 0);
             goneOnSuccess = getArguments().getBoolean(ARG_GONE_ON_SUCCESS, false);
         }
 
@@ -138,10 +142,16 @@ public abstract class CaptchaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = generateCaptchaView(inflater, container, savedInstanceState);
-        TextView captchaPrompt = (TextView)rootView.findViewById(R.id.txt_captcha_prompt);
-        if(customText!=null && captchaPrompt!=null)
-            captchaPrompt.setText(customText);
+
+        View rootView = null;
+        if(customLayout == 0) {
+            rootView = generateCaptchaView(inflater, container, savedInstanceState);
+            TextView captchaPrompt = (TextView) rootView.findViewById(R.id.txt_captcha_prompt);
+            if (customText != null && captchaPrompt != null)
+                captchaPrompt.setText(customText);
+        } else {
+            inflater.inflate(customLayout, container, false);
+        }
         return rootView;
 
     }

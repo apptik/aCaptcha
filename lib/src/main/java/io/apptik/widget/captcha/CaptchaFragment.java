@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha;
+package io.apptik.widget.captcha;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -26,7 +26,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.djodjo.acaptcha.tools.ReflectionTools;
+import org.djodjo.acaptcha.R;
+
+import io.apptik.widget.captcha.tools.ReflectionTools;
 
 
 public abstract class CaptchaFragment extends Fragment {

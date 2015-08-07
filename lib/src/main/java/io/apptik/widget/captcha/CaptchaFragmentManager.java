@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha;
+package io.apptik.widget.captcha;
 
 
 import android.app.Activity;
 import android.app.FragmentManager;
-import android.os.Bundle;
 
-import org.djodjo.acaptcha.builders.CaptchaFragmentBuilder;
-import org.djodjo.acaptcha.builders.ShakeItBuilder;
+import io.apptik.widget.captcha.builders.CaptchaFragmentBuilder;
+import io.apptik.widget.captcha.builders.ShakeItBuilder;
 
 public class CaptchaFragmentManager {
 

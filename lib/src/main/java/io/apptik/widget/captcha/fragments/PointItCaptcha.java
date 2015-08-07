@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha.fragments;
+package io.apptik.widget.captcha.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.djodjo.acaptcha.CaptchaFragment;
+import io.apptik.widget.captcha.CaptchaFragment;
 
 
-public class ColoredCaptcha extends CaptchaFragment {
+public class PointItCaptcha extends CaptchaFragment {
 
     @Override
     protected View generateCaptchaView(LayoutInflater inflater, ViewGroup container,

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha.fragments;
+package io.apptik.widget.captcha.fragments;
 
 import android.app.Activity;
 import android.hardware.Sensor;
@@ -24,9 +24,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.djodjo.acaptcha.CaptchaFragment;
+import io.apptik.widget.captcha.CaptchaFragment;
 import org.djodjo.acaptcha.R;
-import org.djodjo.acaptcha.tools.ShakeEventListener;
+import io.apptik.widget.captcha.tools.ShakeEventListener;
 
 
 public class ShakeItCaptcha extends CaptchaFragment {

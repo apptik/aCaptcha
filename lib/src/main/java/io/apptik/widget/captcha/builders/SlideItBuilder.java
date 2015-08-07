@@ -14,27 +14,22 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha.fragments;
-
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import org.djodjo.acaptcha.CaptchaFragment;
-import org.djodjo.acaptcha.R;
+package io.apptik.widget.captcha.builders;
 
 
-public class FollowPathCaptcha extends CaptchaFragment {
+import io.apptik.widget.captcha.CaptchaFragment;
+import io.apptik.widget.captcha.fragments.SlideItCaptcha;
 
-    @Override
-    protected View generateCaptchaView(LayoutInflater inflater, ViewGroup container,
-                                       Bundle savedInstanceState) {
-        return null;
+public class SlideItBuilder extends CaptchaFragmentBuilder {
+
+    public SlideItBuilder() {
+        fragment =  new SlideItCaptcha();
     }
 
     @Override
-    protected void refreshCaptchaView() {
-
+    public CaptchaFragment build() {
+        if(!args.containsKey(CaptchaFragment.ARG_GONE_ON_SUCCESS))
+            this.removeCaptchaFragmentOnSuccess(true);
+        return super.build();
     }
 }

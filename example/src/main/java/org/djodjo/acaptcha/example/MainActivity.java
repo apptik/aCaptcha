@@ -29,11 +29,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import org.djodjo.acaptcha.CaptchaFragment;
-import org.djodjo.acaptcha.CaptchaFragmentManager;
-import org.djodjo.acaptcha.builders.PointItBuilder;
-import org.djodjo.acaptcha.builders.ShakeItBuilder;
-import org.djodjo.acaptcha.builders.SlideItBuilder;
+import io.apptik.widget.captcha.CaptchaFragment;
+import io.apptik.widget.captcha.CaptchaFragmentManager;
+import io.apptik.widget.captcha.builders.PointItBuilder;
+import io.apptik.widget.captcha.builders.ShakeItBuilder;
+import io.apptik.widget.captcha.builders.SlideItBuilder;
 
 
 public class MainActivity extends Activity

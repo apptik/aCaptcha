@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha.fragments;
+package io.apptik.widget.captcha.fragments;
 
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.djodjo.acaptcha.CaptchaFragment;
-import org.djodjo.acaptcha.R;
+import io.apptik.widget.captcha.CaptchaFragment;
 
-public class SlideItCaptcha extends CaptchaFragment {
+
+public class FollowPathCaptcha extends CaptchaFragment {
 
     @Override
     protected View generateCaptchaView(LayoutInflater inflater, ViewGroup container,

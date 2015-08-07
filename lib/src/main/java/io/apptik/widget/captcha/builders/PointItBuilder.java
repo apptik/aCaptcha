@@ -14,10 +14,15 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha;
+package io.apptik.widget.captcha.builders;
 
 
-public interface CaptchaCallback {
-    void onSuccess();
-    void onError();
+import io.apptik.widget.captcha.fragments.PointItCaptcha;
+
+public class PointItBuilder extends CaptchaFragmentBuilder {
+
+    public PointItBuilder() {
+        fragment =  new PointItCaptcha();
+    }
+
 }

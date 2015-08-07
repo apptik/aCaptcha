@@ -14,27 +14,10 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha.fragments;
-
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import org.djodjo.acaptcha.CaptchaFragment;
-import org.djodjo.acaptcha.R;
+package io.apptik.widget.captcha;
 
 
-public class PointItCaptcha extends CaptchaFragment {
-
-    @Override
-    protected View generateCaptchaView(LayoutInflater inflater, ViewGroup container,
-                                       Bundle savedInstanceState) {
-        return null;
-    }
-
-    @Override
-    protected void refreshCaptchaView() {
-
-    }
+public interface CaptchaCallback {
+    void onSuccess();
+    void onError();
 }

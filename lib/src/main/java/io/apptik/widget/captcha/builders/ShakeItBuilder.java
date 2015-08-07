@@ -14,15 +14,22 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha.builders;
+package io.apptik.widget.captcha.builders;
 
 
-import org.djodjo.acaptcha.fragments.PointItCaptcha;
+import io.apptik.widget.captcha.CaptchaFragment;
+import io.apptik.widget.captcha.fragments.ShakeItCaptcha;
 
-public class PointItBuilder extends CaptchaFragmentBuilder {
+public class ShakeItBuilder extends CaptchaFragmentBuilder {
 
-    public PointItBuilder() {
-        fragment =  new PointItCaptcha();
+    public ShakeItBuilder() {
+        fragment =  new ShakeItCaptcha();
     }
 
+    @Override
+    public CaptchaFragment build() {
+        if(!args.containsKey(CaptchaFragment.ARG_GONE_ON_SUCCESS))
+            this.removeCaptchaFragmentOnSuccess(true);
+        return super.build();
+    }
 }

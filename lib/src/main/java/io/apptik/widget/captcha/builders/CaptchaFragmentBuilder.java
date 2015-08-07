@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha.builders;
+package io.apptik.widget.captcha.builders;
 
 
 import android.os.Bundle;
 
-import org.djodjo.acaptcha.CaptchaFragment;
+import io.apptik.widget.captcha.CaptchaFragment;
 
 public abstract class CaptchaFragmentBuilder {
 

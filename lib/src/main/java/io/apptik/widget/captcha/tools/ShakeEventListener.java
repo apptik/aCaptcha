@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha.tools;
+package io.apptik.widget.captcha.tools;
 
 
 import android.hardware.Sensor;

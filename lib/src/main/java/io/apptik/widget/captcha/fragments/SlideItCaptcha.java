@@ -14,22 +14,25 @@
  * limitations under the License.
  */
 
-package org.djodjo.acaptcha.builders;
+package io.apptik.widget.captcha.fragments;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-import org.djodjo.acaptcha.CaptchaFragment;
-import org.djodjo.acaptcha.fragments.ShakeItCaptcha;
+import io.apptik.widget.captcha.CaptchaFragment;
 
-public class ShakeItBuilder extends CaptchaFragmentBuilder {
+public class SlideItCaptcha extends CaptchaFragment {
 
-    public ShakeItBuilder() {
-        fragment =  new ShakeItCaptcha();
+    @Override
+    protected View generateCaptchaView(LayoutInflater inflater, ViewGroup container,
+                                       Bundle savedInstanceState) {
+        return null;
     }
 
     @Override
-    public CaptchaFragment build() {
-        if(!args.containsKey(CaptchaFragment.ARG_GONE_ON_SUCCESS))
-            this.removeCaptchaFragmentOnSuccess(true);
-        return super.build();
+    protected void refreshCaptchaView() {
+
     }
 }

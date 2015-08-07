@@ -32,9 +32,7 @@ import android.widget.Toast;
 
 import io.apptik.widget.captcha.CaptchaFragment;
 import io.apptik.widget.captcha.CaptchaFragmentManager;
-import io.apptik.widget.captcha.builders.PointItBuilder;
 import io.apptik.widget.captcha.builders.ShakeItBuilder;
-import io.apptik.widget.captcha.builders.SlideItBuilder;
 
 
 public class MainActivity extends FragmentActivity
@@ -159,20 +157,24 @@ public class MainActivity extends FragmentActivity
                                     .build()
                     ); break;
                 case 1:
-                    CaptchaFragmentManager.newCaptcha(getActivity(), R.id.captcha_container,
-                            new SlideItBuilder()
-                                    .onView(R.id.btn_login)
-                                    .withBlockingMethod(CaptchaFragment.BLOCKING_METHOD_ENABLED)
-                                    .build()
-                    ); break;
+//                    CaptchaFragmentManager.newCaptcha(getActivity(), R.id.captcha_container,
+//                            new SlideItBuilder()
+//                                    .onView(R.id.btn_login)
+//                                    .withBlockingMethod(CaptchaFragment.BLOCKING_METHOD_ENABLED)
+//                                    .build()
+//                    );
+                    Toast.makeText(rootView.getContext(), "Coming Soon :)", Toast.LENGTH_LONG).show();
+                    break;
 
                 case 2:
-                    CaptchaFragmentManager.newCaptcha(getActivity(), R.id.captcha_container,
-                            new PointItBuilder()
-                                    .onView(R.id.btn_login)
-                                    .withBlockingMethod(CaptchaFragment.BLOCKING_METHOD_ONCLICK_CALLBACK)
-                                    .build()
-                    ); break;
+//                    CaptchaFragmentManager.newCaptcha(getActivity(), R.id.captcha_container,
+//                            new PointItBuilder()
+//                                    .onView(R.id.btn_login)
+//                                    .withBlockingMethod(CaptchaFragment.BLOCKING_METHOD_ONCLICK_CALLBACK)
+//                                    .build()
+//                    );
+                    Toast.makeText(rootView.getContext(), "Coming Soon :)", Toast.LENGTH_LONG).show();
+                    break;
             }
 
             return rootView;

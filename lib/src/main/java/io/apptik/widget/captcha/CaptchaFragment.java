@@ -18,8 +18,8 @@ package io.apptik.widget.captcha;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -93,7 +93,7 @@ public abstract class CaptchaFragment extends Fragment {
         }
 
         if(goneOnSuccess) {
-            getActivity().getFragmentManager().beginTransaction().remove(this).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
             //if addToBackStack
             //getActivity().getFragmentManager().popBackStack();
         }

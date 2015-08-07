@@ -17,10 +17,9 @@
 package io.apptik.widget.captcha;
 
 
-import android.app.Activity;
-import android.app.FragmentManager;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 
-import io.apptik.widget.captcha.builders.CaptchaFragmentBuilder;
 import io.apptik.widget.captcha.builders.ShakeItBuilder;
 
 public class CaptchaFragmentManager {
@@ -32,8 +31,8 @@ public class CaptchaFragmentManager {
      * @param container the placeholder where to put the captcha fragment
      * @return
      */
-    public static void newCaptcha(Activity activity, int container, CaptchaFragment captchaFragment) {
-        FragmentManager fragmentManager = activity.getFragmentManager();
+    public static void newCaptcha(FragmentActivity activity, int container, CaptchaFragment captchaFragment) {
+        FragmentManager fragmentManager = activity.getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(container, captchaFragment).commit();
     }
 
@@ -43,7 +42,7 @@ public class CaptchaFragmentManager {
      * @param viewId the id of the view which captcha fragment will enable after success
      * @return
      */
-    public static void newShakeItCaptcha(Activity activity, int container, int viewId) {
+    public static void newShakeItCaptcha(FragmentActivity activity, int container, int viewId) {
        newCaptcha(activity, container, new ShakeItBuilder().onView(viewId).build() );
     }
 

@@ -15,7 +15,6 @@
   -->
 
 <resources>
-    <string name="app_name">aCaptcha</string>
     <string name="captcha_shakeit">shake your device to continue</string>
     <string name="captcha_slideit">slide from \'START\' to \'STOP\' to continue</string>
     <string name="captcha_error">Captcha Error</string>

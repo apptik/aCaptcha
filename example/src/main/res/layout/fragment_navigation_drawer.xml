@@ -22,4 +22,4 @@
     android:divider="@android:color/transparent"
     android:dividerHeight="0dp"
     android:background="#cccc"
-    tools:context="org.djodjo.acaptcha.example.NavigationDrawerFragment" />
+    tools:context="io.apptik.widget.acaptcha.exmple.NavigationDrawerFragment" />

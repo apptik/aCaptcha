@@ -25,7 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import io.apptik.widget.captcha.CaptchaFragment;
-import org.djodjo.acaptcha.R;
+import io.apptik.widget.captcha.R;
 import io.apptik.widget.captcha.tools.ShakeEventListener;
 
 

@@ -26,17 +26,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.djodjo.acaptcha.R;
-
 import io.apptik.widget.captcha.tools.ReflectionTools;
 
 
 public abstract class CaptchaFragment extends Fragment {
     private static String TAG = CaptchaFragment.class.getSimpleName();
 
-    public static final int BLOCKING_METHOD_VISIBLE = 1;
-    public static final int BLOCKING_METHOD_ENABLED = 2;
+    public static final int BLOCKING_METHOD_INVISIBLE = 1;
+    public static final int BLOCKING_METHOD_DISABLED = 2;
     public static final int BLOCKING_METHOD_ONCLICK_CALLBACK = 3;
+    public static final int BLOCKING_METHOD_GONE = 4;
 
     public static final String ARG_VIEW_ID = "view_id";
     public static final String ARG_VIEW_BLOCKING_METHOD = "view_blocking_method";
@@ -86,8 +85,9 @@ public abstract class CaptchaFragment extends Fragment {
         }
         if(controlledView != null) {
             switch (blockingMethod) {
-                case BLOCKING_METHOD_ENABLED: controlledView.setEnabled(true); break;
-                case BLOCKING_METHOD_VISIBLE: controlledView.setVisibility(View.VISIBLE); break;
+                case BLOCKING_METHOD_DISABLED: controlledView.setEnabled(true); break;
+                case BLOCKING_METHOD_GONE:
+                case BLOCKING_METHOD_INVISIBLE: controlledView.setVisibility(View.VISIBLE); break;
                 case BLOCKING_METHOD_ONCLICK_CALLBACK: controlledView.setOnClickListener(origOnClickListener); break;
             }
         }
@@ -119,7 +119,7 @@ public abstract class CaptchaFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             controlledView = getActivity().findViewById(getArguments().getInt(ARG_VIEW_ID));
-            blockingMethod = getArguments().getInt(ARG_VIEW_BLOCKING_METHOD, BLOCKING_METHOD_VISIBLE);
+            blockingMethod = getArguments().getInt(ARG_VIEW_BLOCKING_METHOD, BLOCKING_METHOD_INVISIBLE);
             customText = getArguments().getString(ARG_CUSTOM_TEXT, null);
             customLayout = getArguments().getInt(ARG_CUSTOM_LAYOUT, 0);
             goneOnSuccess = getArguments().getBoolean(ARG_GONE_ON_SUCCESS, false);
@@ -127,8 +127,9 @@ public abstract class CaptchaFragment extends Fragment {
 
         if(controlledView != null) {
             switch (blockingMethod) {
-                case BLOCKING_METHOD_ENABLED: controlledView.setEnabled(false); break;
-                case BLOCKING_METHOD_VISIBLE: controlledView.setVisibility(View.INVISIBLE); break;
+                case BLOCKING_METHOD_DISABLED: controlledView.setEnabled(false); break;
+                case BLOCKING_METHOD_GONE: controlledView.setVisibility(View.GONE); break;
+                case BLOCKING_METHOD_INVISIBLE: controlledView.setVisibility(View.INVISIBLE); break;
                 case BLOCKING_METHOD_ONCLICK_CALLBACK:
                     View.OnClickListener onClickListener =  ReflectionTools.getOnClickListener(controlledView);
                     if(onClickListener == null || !(onClickListener instanceof CaptchaOnClickListener)) {

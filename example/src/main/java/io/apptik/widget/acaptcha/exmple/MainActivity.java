@@ -30,6 +30,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import io.apptik.widget.acaptcha.example.R;
 import io.apptik.widget.captcha.CaptchaFragment;
 import io.apptik.widget.captcha.CaptchaFragmentManager;
 import io.apptik.widget.captcha.builders.ShakeItBuilder;
@@ -53,16 +54,16 @@ public class MainActivity extends FragmentActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(org.djodjo.acaptcha.example.R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getFragmentManager().findFragmentById(org.djodjo.acaptcha.example.R.id.navigation_drawer);
+                getFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
-                org.djodjo.acaptcha.example.R.id.navigation_drawer,
-                (DrawerLayout) findViewById(org.djodjo.acaptcha.example.R.id.drawer_layout));
+                R.id.navigation_drawer,
+                (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
     @Override
@@ -70,7 +71,7 @@ public class MainActivity extends FragmentActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(org.djodjo.acaptcha.example.R.id.container, PlaceholderFragment.newInstance(position))
+                .replace(R.id.container, PlaceholderFragment.newInstance(position))
                 .commit();
     }
 
@@ -92,7 +93,7 @@ public class MainActivity extends FragmentActivity
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-            getMenuInflater().inflate(org.djodjo.acaptcha.example.R.menu.main, menu);
+            getMenuInflater().inflate(R.menu.main, menu);
             restoreActionBar();
             return true;
         }
@@ -105,7 +106,7 @@ public class MainActivity extends FragmentActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == org.djodjo.acaptcha.example.R.id.action_settings) {
+        if (id == R.id.action_settings) {
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -139,8 +140,8 @@ public class MainActivity extends FragmentActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(org.djodjo.acaptcha.example.R.layout.fragment_main, container, false);
-            View btnLogin = rootView.findViewById(org.djodjo.acaptcha.example.R.id.btn_login);
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            View btnLogin = rootView.findViewById(R.id.btn_login);
             btnLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -151,16 +152,16 @@ public class MainActivity extends FragmentActivity
 
             switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
                 case 0:
-                    CaptchaFragmentManager.newCaptcha(getActivity(), org.djodjo.acaptcha.example.R.id.captcha_container,
-                            new ShakeItBuilder().onView(org.djodjo.acaptcha.example.R.id.btn_login)
-                                    .withBlockingMethod(CaptchaFragment.BLOCKING_METHOD_VISIBLE)
+                    CaptchaFragmentManager.newCaptcha(getActivity(), R.id.captcha_container,
+                            new ShakeItBuilder().onView(R.id.btn_login)
+                                    .withBlockingMethod(CaptchaFragment.BLOCKING_METHOD_GONE)
                                     .build()
                     ); break;
                 case 1:
 //                    CaptchaFragmentManager.newCaptcha(getActivity(), R.id.captcha_container,
 //                            new SlideItBuilder()
 //                                    .onView(R.id.btn_login)
-//                                    .withBlockingMethod(CaptchaFragment.BLOCKING_METHOD_ENABLED)
+//                                    .withBlockingMethod(CaptchaFragment.BLOCKING_METHOD_DISABLED)
 //                                    .build()
 //                    );
                     Toast.makeText(rootView.getContext(), "Coming Soon :)", Toast.LENGTH_LONG).show();

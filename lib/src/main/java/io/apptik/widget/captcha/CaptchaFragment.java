@@ -152,7 +152,7 @@ public abstract class CaptchaFragment extends Fragment {
             if (customText != null && captchaPrompt != null)
                 captchaPrompt.setText(customText);
         } else {
-            inflater.inflate(customLayout, container, false);
+            rootView = inflater.inflate(customLayout, container, false);
         }
         return rootView;
 
